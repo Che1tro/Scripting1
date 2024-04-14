@@ -1,0 +1,30 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class NPS : MonoBehaviour
+{//здоровье NPS
+    int health = 5;
+        //уровень NPS
+        int level = 1;
+        //скорость NPS
+        float speed = 1.2f;
+    // Start is called before the first frame update
+    void Start()
+    { //команда складывает количество здоровья с уровнем
+        health += level;
+        //команда выводит количество здоровья
+        print("Жизней"+health);
+       
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //заставляет двигаться NPS
+        Vector3 newPosicion = transform.position;
+        newPosicion.z += speed * Time.deltaTime;
+        transform.position = newPosicion;
+        
+    }
+}

@@ -1,0 +1,15 @@
+
+public class Trampoline : MonoBehaviour
+{
+    public float jumpFactor = 2f;
+    void OneTriggerEnter(Collider other)
+    {
+        //команда делает прыжок выше
+        other.GetComponent<Jump>().jumpStrength =10f;
+    }
+    void OneTreggerExit(Collider other)
+    {
+        //команда делает прыжок прежним
+        other.GetComponent<Jump>().jumpStrength = 2f;
+    }
+}

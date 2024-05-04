@@ -1,0 +1,33 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Missile : MonoBehaviour
+{
+    private void OnTriggerEnter(Collider other)
+    {
+        FindObjectOfType<Enemy>().AddOne();
+        Destroy(gameObject);
+        return Missile;
+    }
+    void Update()
+    {
+        transform.position +=
+        transform.forward *
+        speed * Time.deltaTime;
+        void Start()
+        {
+            Destroy(gameObject, 3);
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            Instantiate(fireballPrefab,
+      attackPoint.
+      position, attackPoint.
+      rotation);
+        }
+
+    }
+    [SerializeField] GameObject _fireballPrefab;
+    [SerializeField] Transform _attackPoint;
+}

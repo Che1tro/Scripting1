@@ -1,0 +1,34 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Coin : MonoBehaviour
+{
+    [SerializeField] int _numberOfCoinsInLEvel1;
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        FindObjectOfType<Coin>().AddOne();
+        Destroy(gameObject);
+
+    }
+    public void AddOne() {
+
+        _numberOfCoinsInLEvel1 += 1;
+
+
+
+    }
+
+
+}
